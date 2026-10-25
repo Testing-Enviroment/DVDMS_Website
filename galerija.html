@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galerija – DVD Moslavačka Slatina</title>
+<meta name="description" content="Fotografije vatrogasnog doma, opreme i vježbi DVD-a Moslavačka Slatina.">
+<meta name="theme-color" content="#c8141c">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<header class="top">
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="44" height="48"><span>DVD Moslavačka Slatina</span></a>
+  <button class="burger" aria-label="Izbornik" aria-expanded="false" aria-controls="nav"><span></span></button>
+  <nav id="nav" aria-label="Glavni izbornik">
+    <a href="index.html#o-nama">O nama</a><a href="index.html#povijest">Povijest</a><a href="index.html#okolica">Okolica</a><a href="index.html#vijesti">Novosti</a><a href="galerija.html" aria-current="page">Galerija</a><a href="index.html#kontakt">Kontakt</a>
+    <a class="call" href="tel:193">Hitno 193</a>
+  </nav>
+</header>
+<main id="sadrzaj" class="wrap gpage">
+  <h1>Galerija</h1>
+  <p>Fotografije našeg doma, opreme i vježbi. Kliknite na sliku za povećanje.</p>
+  <div class="gallery g-page" id="grid"></div>
+  <nav class="pager" id="pager" aria-label="Stranice galerije"></nav>
+  <noscript><p>Za pregled galerije potrebno je uključiti JavaScript.</p></noscript>
+</main>
+<footer><p>© <span id="y">2026</span> DVD Moslavačka Slatina · Osnovano 1907.</p></footer>
+<div class="dock"><a href="tel:+385989207507">Nazovi</a><a href="mailto:dvdmoslavackaslatina@gmail.com">Pošalji e-poštu</a></div>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/gallery-data.js"></script>
+<script src="assets/js/gallery-page.js"></script>
+</body>
+</html>
