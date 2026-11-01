@@ -1,5 +1,101 @@
 window.GALLERY = [
  {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy16cdb11.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy16cdb11.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy169gy10.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy169gy10.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy166d79.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy166d79.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy163ba8.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy163ba8.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy160ab7.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy160ab7.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15xg56.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15xg56.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15u935.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15u935.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15r2h4.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15r2h4.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15o8o3.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15o8o3.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15lcx2.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15lcx2.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15i7t1.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15i7t1.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
+  "full": "assets/img/galerija/full/popovaca-vrtic-vjezba-mvy15exr0.jpg",
+  "thumb": "assets/img/galerija/thumb/popovaca-vrtic-vjezba-mvy15exr0.jpg",
+  "w": 720,
+  "h": 540,
+  "alt": "Popovača Vrtić Vježba",
+  "caption": "Popovača Vrtić Vježba"
+ },
+ {
   "full": "assets/img/galerija/full/dom.jpg",
   "thumb": "assets/img/galerija/thumb/dom.jpg",
   "w": 720,
