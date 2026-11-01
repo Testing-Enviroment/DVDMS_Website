@@ -12,12 +12,5 @@ window.NEWS = [
   "title": "Vježba društva",
   "text": "Članovi su održali zajedničku vježbu rukovanja opremom i vozilom.",
   "sample": true
- },
- {
-  "id": "primjer2",
-  "date": "2026-09-15",
-  "title": "Dan otvorenih vrata",
-  "text": "Pozivamo mještane i djecu da razgledaju vatrogasni dom i opremu.",
-  "sample": true
  }
 ];
