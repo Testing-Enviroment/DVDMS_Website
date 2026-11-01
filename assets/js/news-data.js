@@ -19,12 +19,5 @@ window.NEWS = [
   "title": "Dan otvorenih vrata",
   "text": "Pozivamo mještane i djecu da razgledaju vatrogasni dom i opremu.",
   "sample": true
- },
- {
-  "id": "primjer1",
-  "date": "2026-08-20",
-  "title": "Savjeti za ljeto",
-  "text": "Podsjetnik kako izbjeći požare raslinja tijekom vrućina.",
-  "sample": true
  }
 ];
