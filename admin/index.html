@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Uređivanje stranice – DVD Moslavačka Slatina</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box}body{margin:0;font:17px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:#f5efe9;color:#1c1c1c}
+header{background:#141414;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #c8141c;gap:12px;flex-wrap:wrap}
+header a{color:#f2b705}main{max-width:860px;margin:0 auto;padding:20px}
+.box{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px}
+h1,h2{margin:0 0 12px}h1{font-size:1.2rem}h2{font-size:1.3rem}
+label{display:block;font-weight:600;margin:12px 0 4px}input,textarea{width:100%;padding:10px;border:2px solid #ccc;border-radius:8px;font:inherit}
+textarea{min-height:160px}input[type=checkbox]{width:auto}
+button{font:inherit;font-weight:600;padding:10px 18px;border:0;border-radius:99px;background:#c8141c;color:#fff;cursor:pointer}
+button.sec{background:#e6dfd8;color:#1c1c1c}button.dng{background:#fff;color:#c8141c;border:2px solid #c8141c}button:disabled{opacity:.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.tabs{display:flex;gap:8px;margin-bottom:16px}.tabs button{background:#e6dfd8;color:#1c1c1c}.tabs button.on{background:#c8141c;color:#fff}
+.item{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid #eee;flex-wrap:wrap}.item:first-child{border-top:0}
+.item small{color:#666;display:block}.item img{width:72px;height:54px;object-fit:cover;border-radius:6px}.item .t{flex:1;min-width:180px;display:flex;gap:12px;align-items:center}
+#msg{position:sticky;top:0;z-index:5;padding:12px 16px;border-radius:8px;margin-bottom:16px;display:none}#msg.ok{display:block;background:#dff3df}#msg.err{display:block;background:#fbdcdc}#msg.busy{display:block;background:#fff3c4}
+.hint{font-size:.9rem;color:#555}.hide{display:none}
+</style>
+</head>
+<body>
+<header><h1>Uređivanje stranice DVD Moslavačka Slatina</h1><span><a href="../index.html">← Natrag na stranicu</a> <button class="sec hide" id="logout">Odjava</button></span></header>
+<main>
+<div id="msg" role="status"></div>
+
+<section class="box" id="login">
+  <h2>Prijava</h2>
+  <p>Ovdje možete dodavati vijesti i fotografije bez znanja programiranja. Promjene se spremaju u vaš GitHub repozitorij, a stranica se osvježi za otprilike minutu.</p>
+  <label for="owner">GitHub korisnik ili organizacija</label><input id="owner" autocomplete="off">
+  <label for="repo">Naziv repozitorija</label><input id="repo" autocomplete="off">
+  <label for="branch">Grana</label><input id="branch" value="main" autocomplete="off">
+  <label for="token">Pristupni token</label><input id="token" type="password" autocomplete="off">
+  <p class="hint">Token je lozinka samo za ovaj repozitorij. Kako ga napraviti: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Odaberite samo ovaj repozitorij i dozvolu <b>Contents: Read and write</b>. Ne dijelite ga ni s kim.</p>
+  <label><input type="checkbox" id="remember"> Zapamti na ovom uređaju</label>
+  <div class="row"><button id="connect">Prijavi se</button></div>
+</section>
+
+<div id="app" class="hide">
+  <div class="tabs"><button id="tabNews" class="on">Vijesti</button><button id="tabGal">Fotografije</button></div>
+
+  <section id="newsPane">
+    <div class="box">
+      <h2 id="formTitle">Nova vijest</h2>
+      <label for="nDate">Datum</label><input id="nDate" type="date">
+      <label for="nTitle">Naslov</label><input id="nTitle" maxlength="120">
+      <label for="nText">Tekst</label><textarea id="nText"></textarea>
+      <p class="hint">Prazan redak počinje novi odlomak.</p>
+      <label for="nImg">Slika (nije obavezna)</label><input id="nImg" type="file" accept="image/*">
+      <label id="rmWrap" class="hide"><input type="checkbox" id="nRm"> Ukloni postojeću sliku</label>
+      <div class="row"><button id="nSave">Objavi</button><button class="sec hide" id="nCancel">Odustani</button></div>
+    </div>
+    <div class="box"><h2>Objavljene vijesti</h2><div id="nList"></div></div>
+  </section>
+
+  <section id="galPane" class="hide">
+    <div class="box">
+      <h2>Dodaj fotografije</h2>
+      <input id="gFiles" type="file" accept="image/*" multiple>
+      <p class="hint">Fotografije se automatski smanje. Za svaku ćete upisati opis.</p>
+      <div class="row"><button id="gAdd">Dodaj u galeriju</button></div>
+    </div>
+    <div class="box"><h2>Fotografije u galeriji</h2><div id="gList"></div></div>
+  </section>
+</div>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

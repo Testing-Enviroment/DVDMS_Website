@@ -22,7 +22,7 @@
   <a class="brand" href="#"><img src="assets/img/logo.png" alt="" width="44" height="48"><span>DVD Moslavačka Slatina</span></a>
   <button class="burger" aria-label="Izbornik" aria-expanded="false" aria-controls="nav"><span></span></button>
   <nav id="nav" aria-label="Glavni izbornik">
-    <a href="#o-nama">O nama</a><a href="#povijest">Povijest</a><a href="#okolica">Okolica</a><a href="#vijesti">Novosti</a><a href="galerija.html">Galerija</a><a href="#kontakt">Kontakt</a>
+    <a href="#o-nama">O nama</a><a href="#povijest">Povijest</a><a href="#okolica">Okolica</a><a href="novosti.html">Novosti</a><a href="galerija.html">Galerija</a><a href="#kontakt">Kontakt</a>
     <a class="call" href="tel:193">Hitno 193</a>
   </nav>
 </header>
@@ -106,12 +106,9 @@
 <section id="vijesti" class="band">
   <div class="wrap">
     <h2>Novosti</h2>
-    <p class="note">Primjeri objava. Uredite tekst i datume u <code>index.html</code>.</p>
-    <div class="grid news">
-      <article><time datetime="2026-10-01">1. listopada 2026.</time><h3>Vježba društva</h3><p>Članovi su održali zajedničku vježbu rukovanja opremom i vozilom.</p></article>
-      <article><time datetime="2026-09-15">15. rujna 2026.</time><h3>Dan otvorenih vrata</h3><p>Pozivamo mještane i djecu da razgledaju vatrogasni dom i opremu.</p></article>
-      <article><time datetime="2026-08-20">20. kolovoza 2026.</time><h3>Savjeti za ljeto</h3><p>Podsjetnik kako izbjeći požare raslinja tijekom vrućina.</p></article>
-    </div>
+    <div class="grid news" id="news-preview"></div>
+    <noscript><p>Novosti su na stranici <a href="novosti.html">Novosti</a>.</p></noscript>
+    <p class="more"><a class="btn dk" href="novosti.html">Sve novosti</a></p>
   </div>
 </section>
 
@@ -159,6 +156,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FireStation","name":"DVD Moslavačka Slatina","foundingDate":"1907","telephone":"+385989207507","email":"dvdmoslavackaslatina@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Put kroz selo 52","postalCode":"44317","addressLocality":"Moslavačka Slatina","addressCountry":"HR"}}</script>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/lightbox.js"></script>
+<script src="assets/js/news-data.js"></script>
+<script src="assets/js/news.js"></script>
 <script>
 document.querySelectorAll(".gallery").forEach(function(g){var im=[].slice.call(g.querySelectorAll("img")),L=im.map(function(i){return{full:i.dataset.full||i.src,alt:i.alt,caption:i.parentNode.querySelector("figcaption").textContent}});im.forEach(function(i,k){i.addEventListener("click",function(){openLightbox(L,k)})})});
 </script>

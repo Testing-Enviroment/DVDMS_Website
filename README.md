@@ -36,3 +36,19 @@ Tekstove prije objave provjerite i dopunite podacima iz kronike društva.
 Početna stranica prikazuje nekoliko fotografija, a `galerija.html` sve, po 6 na stranici (1, 2, 3 ...). Broj po stranici je `PER` u `assets/js/gallery-page.js`.
 Nove fotografije: stavite ih u `nove-slike/` i pokrenite `python3 tools/dodaj_slike.py`. Skripta ih smanji i doda u galeriju.
 Mali pregledi (thumb) učitavaju se na stranici, a velika slika tek kad kliknete.
+
+## Novosti
+Početna prikazuje 3 najnovije vijesti, a `novosti.html` sve, po 5 na stranici. Vijesti su u `assets/js/news-data.js`.
+Tri vijesti označene kao "Primjer" su probne: obrišite ih kad objavite prave.
+
+## Uređivanje bez programiranja: admin stranica
+Otvorite `https://<korisnik>.github.io/<repozitorij>/admin/` (dodajte `/admin/` na adresu stranice).
+1. Napravite pristupni token: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Odaberite samo ovaj repozitorij i dozvolu **Contents: Read and write**, a istek postavite na npr. godinu dana.
+2. Prijavite se (korisnik, repozitorij, grana `main`, token). Možete označiti "Zapamti na ovom uređaju".
+3. Kartica **Vijesti**: dodavanje, uređivanje i brisanje vijesti (sa slikom ili bez). Kartica **Fotografije**: dodavanje (više odjednom, automatski se smanje), promjena opisa i brisanje.
+4. Svaka promjena se sprema kao zapis (commit) u repozitorij, a stranica se osvježi za otprilike minutu.
+Token čuvajte kao lozinku. Admin stranica nije povezana sa stranice i tražilice je ne indeksiraju, ali bez tokena ništa ne može promijeniti. Ako token izgubite ili ga netko vidi, obrišite ga na GitHubu i napravite novi.
+
+## Uređivanje tekstova (povijest, kontakt, ostalo)
+Na GitHubu otvorite `index.html`, kliknite ikonu olovke, promijenite tekst i kliknite "Commit changes".
+Alternativa: mapa `nove-slike/` i `tools/dodaj_slike.py` za dodavanje fotografija s računala.
