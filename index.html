@@ -8,11 +8,11 @@
 <meta name="theme-color" content="#c8141c">
 <meta property="og:title" content="DVD Moslavačka Slatina">
 <meta property="og:description" content="Vatrogasci – uvijek spremni. Dobrovoljno vatrogasno društvo od 1907.">
-<meta property="og:image" content="assets/img/banner.jpg">
+<meta property="og:image" content="https://testing-enviroment.github.io/DVDMS_Website/assets/img/banner.jpg">
+<meta property="og:url" content="https://testing-enviroment.github.io/DVDMS_Website/">
+<meta property="og:locale" content="hr_HR">
+<link rel="canonical" href="https://testing-enviroment.github.io/DVDMS_Website/">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -58,6 +58,16 @@
       <article><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l18 8-18 8-18-8zM12 24v8c0 4 24 4 24 0v-8l-12 5z"/></svg><h3>Prevencija i edukacija</h3><p>Vježbe, predavanja i druženja za djecu i odrasle.</p></article>
     </div>
   </div>
+</section>
+
+<section id="godina" class="wrap">
+  <h2>Kroz godinu</h2>
+  <div class="grid">
+    <article><h3>4. svibnja</h3><p>Dan hrvatskog vatrogastva i sv. Florijana, zaštitnika vatrogasaca.</p></article>
+    <article><h3>Svibanj</h3><p>Mjesec zaštite od požara: dežurstva i preventivni rad s mještanima.</p></article>
+    <article><h3>Cijele godine</h3><p>Vježbe, održavanje opreme i godišnja skupština društva.</p></article>
+  </div>
+  <p class="note">Datume svojih događanja objavljujte u <a href="novosti.html">Novostima</a>.</p>
 </section>
 
 <section id="povijest" class="wrap hist">
@@ -135,6 +145,14 @@
   </div>
 </section>
 
+<section id="podrska" class="band">
+  <div class="wrap">
+    <h2>Podrška društvu</h2>
+    <p>Rad dobrovoljnog vatrogasnog društva ovisi o zajednici. Ako želite podržati društvo donacijom, sponzorstvom ili pomoći oko opreme i doma, javite nam se.</p>
+    <p><a class="btn dk" href="mailto:dvdmoslavackaslatina@gmail.com?subject=Podr%C5%A1ka%20dru%C5%A1tvu">Javi nam se</a></p>
+  </div>
+</section>
+
 <section id="kontakt" class="wrap split contact">
   <div>
     <h2>Kontakt</h2>
@@ -143,9 +161,15 @@
       <p>Telefon: <a href="tel:+385989207507">+385 98 920 7507</a><br>E-pošta: <a href="mailto:dvdmoslavackaslatina@gmail.com">dvdmoslavackaslatina@gmail.com</a></p>
       <p>Hitni slučajevi: <a href="tel:193">193</a> ili <a href="tel:112">112</a></p>
     </address>
-    <a class="btn dk" href="https://www.google.com/maps/search/?api=1&query=Put+kroz+selo+52+Moslavačka+Slatina" target="_blank" rel="noopener">Otvori na karti</a>
+    <a class="btn dk" href="https://www.google.com/maps?q=45.614501,16.66463" target="_blank" rel="noopener">Otvori na karti</a>
   </div>
   <figure><img src="assets/img/dom.jpg" alt="Ulaz u vatrogasni dom" width="1600" height="1200" loading="lazy"></figure>
+</section>
+<section class="wrap mapwrap" aria-label="Karta">
+  <div class="map" id="map" data-src="https://www.openstreetmap.org/export/embed.html?bbox=16.658630,45.611001,16.670630,45.618001&amp;layer=mapnik&amp;marker=45.614501,16.66463">
+    <button type="button" id="mapBtn">Prikaži kartu</button>
+    <p>Karta se učitava s OpenStreetMapa tek kad kliknete. <a href="https://www.google.com/maps?q=45.614501,16.66463" target="_blank" rel="noopener">Otvori u Google Mapsu</a></p>
+  </div>
 </section>
 </main>
 
@@ -153,7 +177,7 @@
 
 <div class="dock"><a href="tel:+385989207507">Nazovi</a><a href="mailto:dvdmoslavackaslatina@gmail.com">Pošalji e-poštu</a></div>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FireStation","name":"DVD Moslavačka Slatina","foundingDate":"1907","telephone":"+385989207507","email":"dvdmoslavackaslatina@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Put kroz selo 52","postalCode":"44317","addressLocality":"Moslavačka Slatina","addressCountry":"HR"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FireStation","name":"DVD Moslavačka Slatina","foundingDate":"1907","telephone":"+385989207507","email":"dvdmoslavackaslatina@gmail.com","geo":{"@type":"GeoCoordinates","latitude":45.614501,"longitude":16.66463},"address":{"@type":"PostalAddress","streetAddress":"Put kroz selo 52","postalCode":"44317","addressLocality":"Moslavačka Slatina","addressCountry":"HR"}}</script>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/lightbox.js"></script>
 <script src="assets/js/news-data.js"></script>

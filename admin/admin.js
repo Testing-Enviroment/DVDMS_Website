@@ -6,10 +6,11 @@ var NEWS='assets/js/news-data.js',GAL='assets/js/gallery-data.js';
 function msg(t,c){var m=$('#msg');m.textContent=t;m.className=t?c:''}
 function busy(on,t){document.querySelectorAll('button').forEach(function(b){b.disabled=on});if(on)msg(t||'Spremam…','busy')}
 function api(path,opt){opt=opt||{};opt.cache='no-store';opt.headers={'Authorization':'Bearer '+cfg.token,'Accept':'application/vnd.github+json'};
- return fetch('https://api.github.com/repos/'+cfg.owner+'/'+cfg.repo+path,opt).then(function(r){return r.text().then(function(t){if(!r.ok)throw new Error(r.status===401?'Token nije ispravan ili je istekao.':r.status===404?'Repozitorij ili datoteka nisu pronađeni (provjerite naziv, granu i dozvole tokena).':r.status+' '+t.slice(0,150));return JSON.parse(t)})})}
-function getF(p){return api('/contents/'+p+'?ref='+encodeURIComponent(cfg.branch))}
-function putF(p,b64,m,sha){var b={message:m,content:b64,branch:cfg.branch};if(sha)b.sha=sha;return api('/contents/'+p,{method:'PUT',body:JSON.stringify(b)})}
-function delF(p,m){return getF(p).then(function(f){return api('/contents/'+p,{method:'DELETE',body:JSON.stringify({message:m,sha:f.sha,branch:cfg.branch})})}).catch(function(){})}
+ return fetch('https://api.github.com/repos/'+cfg.owner+'/'+cfg.repo+path,opt).then(function(r){return r.text().then(function(t){if(!r.ok)throw new Error(r.status===401?'Token nije ispravan ili je istekao.':r.status===404?'Nije pronađeno (404).':r.status+' '+t.slice(0,150));return JSON.parse(t)})})}
+function B(p){return (cfg.base||'')+p}
+function getF(p){return api('/contents/'+B(p)+'?ref='+encodeURIComponent(cfg.branch))}
+function putF(p,b64,m,sha){var b={message:m,content:b64,branch:cfg.branch};if(sha)b.sha=sha;return api('/contents/'+B(p),{method:'PUT',body:JSON.stringify(b)})}
+function delF(p,m){return getF(p).then(function(f){return api('/contents/'+B(p),{method:'DELETE',body:JSON.stringify({message:m,sha:f.sha,branch:cfg.branch})})}).catch(function(){})}
 function dec(b){return decodeURIComponent(escape(atob(b.replace(/\n/g,''))))}
 function enc(s){return btoa(unescape(encodeURIComponent(s)))}
 function parse(t){return JSON.parse(t.slice(t.indexOf('['),t.lastIndexOf(']')+1))}
@@ -21,9 +22,27 @@ function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+
 function saveData(path,name,arr,key,m){return putF(path,enc('window.'+name+' = '+JSON.stringify(arr,null,1)+';\n'),m,st[key]).then(function(r){st[key]=r.content.sha})}
 function sortNews(){st.news.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:(a.id<b.id?1:-1)})}
 
-function load(){busy(true,'Učitavam…');
- return Promise.all([getF(NEWS),getF(GAL)]).then(function(r){st.news=parse(dec(r[0].content));st.shaN=r[0].sha;st.gal=parse(dec(r[1].content));st.shaG=r[1].sha;
-  $('#login').classList.add('hide');$('#app').classList.remove('hide');$('#logout').classList.remove('hide');renderNews();renderGal();msg('')}).finally(function(){busy(false)})}
+function fail(t){var e=new Error(t);e.nice=true;throw e}
+async function diagnose(){
+ msg('Provjeravam repozitorij…','busy');
+ var repo;
+ try{repo=await api('')}catch(e){
+  if(/401/.test(e.message)||/token/i.test(e.message))fail('Token nije ispravan ili je istekao. Napravite novi token.');
+  fail('Repozitorij "'+cfg.owner+'/'+cfg.repo+'" nije pronađen ili token nema pristup do njega. Provjerite: 1) točan naziv i velika/mala slova, kako piše u adresi repozitorija na GitHubu, 2) kod izrade tokena u "Repository access" odabrali ste baš taj repozitorij, 3) ako repozitorij pripada organizaciji, u "Resource owner" odaberite organizaciju.')}
+ try{await api('/branches/'+encodeURIComponent(cfg.branch))}catch(e){cfg.branch=repo.default_branch;$('#branch').value=cfg.branch}
+ var miss=[];
+ for(var f of [NEWS,GAL]){try{await getF(f)}catch(e){miss.push(f)}}
+ if(!miss.length)return;
+ try{var tr=await api('/git/trees/'+encodeURIComponent(cfg.branch)+'?recursive=1');
+  var hit=tr.tree.find(function(t){return t.path.slice(-NEWS.length)===NEWS});
+  if(hit){cfg.base=hit.path.slice(0,hit.path.length-NEWS.length);try{await getF(NEWS);await getF(GAL);return}catch(e){miss=[GAL]}}}catch(e){}
+ cfg.base='';
+ fail('U repozitoriju "'+cfg.owner+'/'+cfg.repo+'" (grana '+cfg.branch+') nedostaje: '+miss.join(', ')+'. Učitajte najnoviju verziju stranice (cijeli sadržaj ZIP-a, uključujući mapu assets) u repozitorij pa pokušajte ponovno.')}
+async function load(){busy(true,'Učitavam…');
+ try{await diagnose();
+  var r=await Promise.all([getF(NEWS),getF(GAL)]);st.news=parse(dec(r[0].content));st.shaN=r[0].sha;st.gal=parse(dec(r[1].content));st.shaG=r[1].sha;
+  $('#login').classList.add('hide');$('#app').classList.remove('hide');$('#logout').classList.remove('hide');renderNews();renderGal();msg('')}
+ finally{busy(false)}}
 
 /* ---- vijesti ---- */
 function renderNews(){var L=$('#nList');L.innerHTML='';

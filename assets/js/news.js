@@ -9,7 +9,7 @@ function card(n,full){
  var t=el('time',null,date(n.date));t.dateTime=n.date;a.appendChild(t);
  if(n.sample)a.appendChild(el('span','tag','Primjer'));
  a.appendChild(el('h3',null,n.title));
- var paras=String(n.text||'').split(/\n\s*\n/);
+ var paras=String(n.text||'').split(/\n+/);
  if(full){paras.forEach(function(p){a.appendChild(el('p',null,p))})}
  else{var s=paras[0];if(s.length>150)s=s.slice(0,150).replace(/\s+\S*$/,'')+'…';a.appendChild(el('p',null,s));
   var l=el('a','rm','Pročitaj više');l.href='novosti.html?vijest='+encodeURIComponent(n.id);a.appendChild(l)}

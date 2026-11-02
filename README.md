@@ -5,7 +5,7 @@ Statička web stranica (HTML + CSS + malo JavaScripta), bez build koraka. Prilag
 ## Objava na GitHub Pages
 1. Napravite repozitorij na GitHubu i učitajte sve datoteke iz ove mape (uključujući skrivenu `.nojekyll`).
 2. **Settings → Pages → Build and deployment**: Source *Deploy from a branch*, branch `main`, folder `/ (root)`.
-3. Stranica će biti na `https://<korisnik>.github.io/<repozitorij>/`.
+3. Stranica će biti na `https://<korisnik>.github.io/<repozitorij>/` (vaša: https://testing-enviroment.github.io/DVDMS_Website/).
 4. Vlastita domena: dodajte datoteku `CNAME` s imenom domene i podesite DNS.
 
 ## Što urediti
@@ -52,3 +52,8 @@ Token čuvajte kao lozinku. Admin stranica nije povezana sa stranice i tražilic
 ## Uređivanje tekstova (povijest, kontakt, ostalo)
 Na GitHubu otvorite `index.html`, kliknite ikonu olovke, promijenite tekst i kliknite "Commit changes".
 Alternativa: mapa `nove-slike/` i `tools/dodaj_slike.py` za dodavanje fotografija s računala.
+
+## Napomene
+- Fontovi su sistemski (nema učitavanja s Googlea), pa stranica ne šalje podatke trećim stranama i brže se učitava.
+- Adrese u `index.html` (`og:image`, `canonical`) odnose se na github.io adresu. Ako dobijete vlastitu domenu, zamijenite ih.
+- Nakon izmjena datoteka na GitHubu (Add file → Upload files) stranica se osvježi za otprilike minutu.
